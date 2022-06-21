@@ -5,9 +5,9 @@
 ROOT_UID=0
 E_NOTROOT=100
 
-read -rp "Install or Upgrade NGINX (y/n)" INSTALL
+read -rp "Install or Upgrade NGINX? (y/n) " INSTALL
 
-if [[ $INSTALL =~ ^([yY][eE][sS]|[yY]$ ]]; then
+if [[ $INSTALL =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	
 	if [ "$UID" -ne "$ROOT_UID" ]
 	then
@@ -17,7 +17,7 @@ if [[ $INSTALL =~ ^([yY][eE][sS]|[yY]$ ]]; then
 	fi
 
 		which nginx &> /dev/null || {
-			echo "Installing ngingx"
+			echo "Installing nginx"
 			apt install update -y
 			apt install upgrade -y
 			apt intall nginx
@@ -28,7 +28,7 @@ if [[ $INSTALL =~ ^([yY][eE][sS]|[yY]$ ]]; then
 				echo "Updating NGINX Server"
 				apt install update -y
 				apt install upgrade -y
-				apy install nginx --upgrade
+				apt install nginx --upgrade
 			}
 
 			echo "Completed bhae."

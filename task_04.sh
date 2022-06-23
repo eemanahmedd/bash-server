@@ -22,6 +22,9 @@ which aws &> /dev/null || {
 
  
 	} && {
-
- 
+AWS_ACCESS_KEY_ID=$(aws --region=us-east-1 ssm get-parameter --name "emanaccess" --with-decryption --output text --query Parameter.Value)
+echo ${AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY=$(aws --region=us-east-1 ssm get-parameter --name "emankey" --with-decryption --output text --query Parameter.Value)
+echo ${AWS_SECRET_ACCESS_KEY}
 }
+

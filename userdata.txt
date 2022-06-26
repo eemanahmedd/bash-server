@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo su
+apt update -y
+apt upgrade -y
+
+apt install nginx -y
+systemctl enable nginx
+systemctl start nginx
+
+apt install unzip -y
+mkdir temp-website && cd temp-website
+curl https://www.free-css.com/assets/files/free-css-templates/download/page280/heustonn.zip -o website.zip
+unzip website.zip
+rm -r /var/www/html/*
+mv ./*/* /var/www/html

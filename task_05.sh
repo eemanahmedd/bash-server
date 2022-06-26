@@ -1,17 +1,17 @@
-AWS_ACCESS_KEY_ID=$(aws --region=us-east-1 ssm get-parameter --name "emanaccess" --with-decryption --output text --query Parameter.Value)
-AWS_SECRET_ACCESS_KEY=$(aws --region=us-east-1 ssm get-parameter --name "emankey" --with-decryption --output text --query Parameter.Value)
+AWS_ACCESS_KEY_ID=$(aws --region=us-east-1 ssm get-parameter --name "accesskey" --with-decryption --output text --query Parameter.Value)
+AWS_SECRET_ACCESS_KEY=$(aws --region=us-east-1 ssm get-parameter --name "secretkey" --with-decryption --output text --query Parameter.Value)
 AWS_DEFAULT_REGION=us-east-1
 
 AMI=ami-052efd3df9dad4825
 COUNT=1
 INSTANCE_TYPE="t2.micro"
 KEY_NAME="assignment-02-kp"
-SUBNET_ID="subnet-01c98615297f0acef"
+SUBNET_ID="subnet-0d6a22f68ea072d3d"
 TAG='ResourceType=instance,Tags=[{Key=Name,Value=Ubuntu-Server-01}]'
-SG="sg-00eaae463599a289c"
+SG="sg-08f341ba2644495c7"
 
 
-SUBNET_ID_1="subnet-0f6ba08cba0b6e11d"
+SUBNET_ID_1="subnet-00230360b5e8d53af"
 TAG_1='ResourceType=instance,Tags=[{Key=Name,Value=Ubuntu-Server-02}]'
 
 
